@@ -1,4 +1,5 @@
 <?php
+
 class Database
 {
     private $host = DB_HOST;
@@ -27,11 +28,14 @@ class Database
             $this->error = $e->getMessage();
         }
     }
+    // The prepare function allows you to bind values
+    // into your SQL statements.
 
     public function query($query)
     {
         $this->stmt = $this->dbh->prepare($query);
     }
+
     public function bind($param, $value, $type = null)
     {
         if (is_null($type)) {
@@ -49,5 +53,49 @@ class Database
                     $type = PDO::PARAM_STR;
             }
         }
+        $this->stmt->bindValue($param, $value, $type);
+    }
+
+    public function execute()
+    {
+        return $this->stmt->execute();
+    }
+
+    public function resultset()
+    {
+        $this->execute();
+
+        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function single()
+    {
+        $this->execute();
+
+        return $this->stmt->fetch(PDO::FETCH_OBJ);
+    }
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
+    public function lastInsertId()
+    {
+        return $this->dbh->lastInsertId();
+    }
+    public function beginTransaction()
+    {
+        return $this->dbh->beginTransaction();
+    }
+    public function endTransaction()
+    {
+        return $this->dbh->commit();
+    }
+    public function cancelTransaction()
+    {
+        return $this->dbh->rollBack();
+    }
+    public function debugDumpParams()
+    {
+        return $this->stmt->debugDumpParams();
     }
 }
