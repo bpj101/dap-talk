@@ -1,6 +1,5 @@
-<!DOCTYPE php>
-<php lang="en">
-
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +10,9 @@
     <link rel="icon" href="favicon.ico">
     <title>Welcome to DAP Talk</title>
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo BASE_URI; ?>templates/css/bootstrap.css" rel="stylesheet">
+    <link href="templates/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="<?php echo BASE_URI; ?>templates/css/custom.css" rel="stylesheet">
+    <link href="templates/css/custom.css" rel="stylesheet">
   </head>
 
   <body>
@@ -31,13 +30,13 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right">
             <li class="active">
-              <a href="<?php echo BASE_URI; ?>index.php">Home <span class="sr-only">(current)</span></a>
+              <a href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li>
-              <a href="<?php echo BASE_URI; ?>register.php">Create An Account</a>
+              <a href="register.php">Create An Account</a>
             </li>
             <li>
-              <a href="<?php echo BASE_URI; ?>create.php">Create A Topic</a>
+              <a href="create.php">Create A Topic</a>
             </li>
           </ul>
         </div>

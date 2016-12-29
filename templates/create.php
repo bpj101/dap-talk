@@ -1,8 +1,9 @@
-<?php include('includes/header.php'); ?>
+<?php
+include('includes/header.php'); ?>
 <form role="form" method="post" action="topic.html">
   <div class="form-group">
     <label>Topic Title</label>
-    <input name="title" type="text" class="form-control" placeholder="Enter Post Title">
+    <input name="title" type="text" class="form-control" placeholder="Enter Post Title"/>
   </div>
   <div class="form-group">
     <label>Category</label>

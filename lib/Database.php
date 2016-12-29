@@ -29,7 +29,7 @@ class Database
         }
     }
     // The prepare function allows you to bind values
-    // into your SQL statements.
+    // into your SQL statements. Exmple :name:
 
     public function query($query)
     {
