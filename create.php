@@ -6,7 +6,7 @@
 $topic = new Topic();
 
 
-
+/*----------  Create New Topic  ----------*/
 if (isset($_POST['do_create'])) {
   // Get Validator Object
     $valid = new Validator();
@@ -22,7 +22,7 @@ if (isset($_POST['do_create'])) {
     // Required Fields Array
     $field_array = array('title', 'body', 'category');
 
-/*----------  Validate Input Data Fields  ----------*/
+    // Validate fields
     if ($valid->isRequired($field_array)) {
         // Create Topic
         if ($topic->create($data)) {
