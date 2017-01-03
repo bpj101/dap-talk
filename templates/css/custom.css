@@ -151,4 +151,9 @@ a.list-group-item.active:focus {
 .btn-primary,
 .btn-primary:hover {
   background: #5c5b69;
+  border-color: #5c5b69;
+}
+
+button.btn.btn-primary {
+  border-color: #5c5b69 !important;
 }

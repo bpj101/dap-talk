@@ -1,6 +1,5 @@
 <?php include('includes/header.php'); ?>
-
-<form role="form" enctype="multipart/form-data" method="post" action="register.html">
+<form role="form" enctype="multipart/form-data" method="post" action="register.php">
   <div class="form-group">
     <label>Name*</label>
     <input name="name" type="text" class="form-control" placeholder="Enter Your Name">
@@ -30,6 +29,7 @@
     <label>About Me</label>
     <textarea id="about" rows="6" cols="80" name="about" type="text" class="form-control" placeholder="Tell Us About You (Optional)"></textarea>
   </div>
+  <p class="pull-right">*Required Fields</p>
   <input name="register" type="submit" class="btn btn-default" value="Register">
 </form>
 <?php include('includes/footer.php'); ?>

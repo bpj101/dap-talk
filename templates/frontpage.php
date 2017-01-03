@@ -5,7 +5,7 @@
     <li class="topic">
     <div class="row">
       <div class="col-md-2">
-        <img src="img/avatar/<?php echo $topic->avatar ?>" alt="User's Avatar" class="avatar pull-left">
+        <img src="img/avatars/<?php echo $topic->avatar ?>" alt="User's Avatar" class="avatar pull-left">
       </div>
       <div class="col-md-10">
         <div class="topic-content pull-right">
@@ -14,8 +14,8 @@
             <a href="topics.php?category=<?php echo urlFormat($topic->category_id); ?>">
             <?php echo $topic->name;?></a> ➤➤ 
             <a href="topics.php?user=<?php echo urlFormat($topic->user_id); ?>"><?php echo $topic->username;?></a> ➤➤ 
-            <span>Posted on: <?php echo $topic->create_date;?></span>
-            <span class="badge pull-right">3</span>
+            <span>Posted: <?php echo formateDate($topic->create_date);?></span>
+            <span class="badge pull-right"><?php echo replyCount($topic->id);?> Replies</span>
           </div>
         </div>
       </div>
@@ -28,8 +28,8 @@
 <?php endif ?>  
 <h3>Forum Statistics</h3>
 <ul>
-  <li>Total Number of Users: <strong>52</strong></li>
-  <li>Total Number of Topics: <strong>10</strong></li>
-  <li>Total Number of Categories: <strong>5</strong></li>
+  <li>Total Number of Users: <strong><?php echo $totalUsers; ?></strong></li>
+  <li>Total Number of Topics: <strong><?php echo $totalTopics; ?></strong></li>
+  <li>Total Number of Categories: <strong><?php echo $totalCategories; ?></strong></li>
 </ul>
 <?php include 'includes/footer.php'; ?>

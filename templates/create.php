@@ -1,6 +1,6 @@
 <?php
-include('includes/header.php'); ?>
-<form role="form" method="post" action="topic.html">
+include 'includes/header.php'; ?>
+<form role="form" method="post" action="create.php">
   <div class="form-group">
     <label>Topic Title</label>
     <input name="title" type="text" class="form-control" placeholder="Enter Post Title"/>
@@ -8,12 +8,10 @@ include('includes/header.php'); ?>
   <div class="form-group">
     <label>Category</label>
     <select name="category" class="form-control" placeholder="Select One">
-      <option value="" disabled selected>Select A Category</option>
-      <option>Design</option>
-      <option>Development</option>
-      <option>Business & Marketing</option>
-      <option>Search Engines</option>
-      <option>Cloud & Hosting</option>
+      <option value="" disabled selected style="color: #9f9999">Select A Category</option>
+        <?php foreach (getCategories() as $category) : ?>
+        <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+        <?php endforeach; ?>
     </select>
   </div>
   <div class="form-group">
@@ -23,6 +21,6 @@ include('includes/header.php'); ?>
     CKEDITOR.replace('body');
     </script>
   </div>
-  <button name="register" type="submit" class="btn btn-default">Submit</button>
+  <button name="do_create" type="submit" class="btn btn-default">Submit</button>
 </form>
-<?php include('includes/footer.php'); ?>
+<?php include 'includes/footer.php'; ?>
